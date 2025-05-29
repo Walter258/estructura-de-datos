@@ -13,7 +13,7 @@ struct Nodo {
 // Puntero al tope de la pila
 Nodo* tope = NULL;
 
-// Función para insertar un nuevo proceso en la pila (push)
+// FunciÃ³n para insertar un nuevo proceso en la pila (push)
 void IngresarPila(int id, const string& nombre) {
     Nodo* nuevo = new Nodo;
     nuevo->id = id;
@@ -23,7 +23,7 @@ void IngresarPila(int id, const string& nombre) {
     cout << "? Proceso agregado a la pila: " << id << " - " << nombre << endl;
 }
 
-// Función para actualizar el nombre de un proceso por ID
+// FunciÃ³n para actualizar el nombre de un proceso por ID
 bool ActualizarPila(int id, const string& nuevoNombre) {
     Nodo* actual = tope;
     while (actual != NULL) {
@@ -38,7 +38,7 @@ bool ActualizarPila(int id, const string& nuevoNombre) {
     return false;
 }
 
-// Función para eliminar el proceso del tope de la pila (pop)
+// FunciÃ³n para eliminar el proceso del tope de la pila (pop)
 bool EliminarProceso() {
     if (tope == NULL) {
         cout << "? No hay procesos para eliminar.\n";
@@ -51,7 +51,7 @@ bool EliminarProceso() {
     return true;
 }
 
-// Función para buscar un proceso por nombre
+// FunciÃ³n para buscar un proceso por nombre
 void BuscarPorNombre(const string& nombreBuscado) {
     Nodo* actual = tope;
     bool encontrado = false;
@@ -67,16 +67,16 @@ void BuscarPorNombre(const string& nombreBuscado) {
     }
 
     if (!encontrado) {
-        cout << "? No se encontró ningún proceso con ese nombre.\n";
+        cout << "? No se encontrÃ³ ningÃºn proceso con ese nombre.\n";
     }
 }
 
-// Función para mostrar los procesos en la pila
+// FunciÃ³n para mostrar los procesos en la pila
 void MostrarPila() {
     Nodo* actual = tope;
     cout << "\n?? Procesos en la pila:\n";
     if (actual == NULL) {
-        cout << "(La pila está vacía)\n";
+        cout << "(La pila estÃ¡ vacÃ­a)\n";
         return;
     }
 
@@ -86,7 +86,7 @@ void MostrarPila() {
     }
 }
 
-// Función para liberar memoria al final
+// FunciÃ³n para liberar memoria al final
 void LiberarMemoria() {
     while (tope != NULL) {
         Nodo* temp = tope;
@@ -114,7 +114,7 @@ int main() {
             case 1:
                 cout << "Ingrese ID del proceso: ";
                 cin >> id;
-                cin.ignore(); // Limpiar salto de línea pendiente
+                cin.ignore(); // Limpiar salto de lÃ­nea pendiente
                 cout << "Ingrese nombre del proceso: ";
                 getline(cin, nombre);
                 IngresarPila(id, nombre);
@@ -123,7 +123,7 @@ int main() {
             case 2:
                 cout << "Ingrese ID del proceso a actualizar: ";
                 cin >> id;
-                cin.ignore(); // Limpiar salto de línea pendiente
+                cin.ignore(); // Limpiar salto de lÃ­nea pendiente
                 cout << "Ingrese nuevo nombre del proceso: ";
                 getline(cin, nombre);
                 ActualizarPila(id, nombre);
@@ -138,7 +138,7 @@ int main() {
                 break;
 
             case 5:
-                cin.ignore(); // Limpiar salto de línea pendiente
+                cin.ignore(); // Limpiar salto de lÃ­nea pendiente
                 cout << "Ingrese el nombre del proceso a buscar: ";
                 getline(cin, nombre);
                 BuscarPorNombre(nombre);
@@ -149,7 +149,7 @@ int main() {
                 break;
 
             default:
-                cout << "? Opción inválida. Intente nuevamente.\n";
+                cout << "? OpciÃ³n invÃ¡lida. Intente nuevamente.\n";
         }
 
     } while (opcion != 6);
